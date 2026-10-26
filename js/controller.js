@@ -1,9 +1,37 @@
 import {readClient, deleteClient, createClient, updateClient} from './model.js'
 import {openModal, closeModal, updateTable, fillFields, editNameModal} from './view.js'
 
+export const validateEmail = () => {
+    const inputEmail = document.getElementById('email')
+    const moldeEmail = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/
+    const emailValor = inputEmail.value
 
-const isValidFields = () => {
-    return document.getElementById('form').reportValidity()
+
+    if (moldeEmail.test(emailValor)){
+        inputEmail.setCustomValidity('');
+        return true
+    }else{
+        let inputEmail = document.getElementById('email')
+        inputEmail.setCustomValidity('Formato de email errado.')
+        inputEmail.reportValidity()
+        return false
+    }
+}
+
+const validateName = () => {
+
+}
+
+const validatePhone = () => {
+
+}
+
+const validateCity = () => {
+
+}
+
+const isValidForm = () => {
+    return validateEmail() && validateName() && validatePhone() && validateCity()
 }
 
 const editClient = (index) => {
@@ -31,7 +59,7 @@ export const editDelete = (event) => {
 }
 
 export const saveClient = () => {
-    if (isValidFields()) {
+    if (isValidForm()) {
         const client = {
             nome: document.getElementById('nome').value,
             email: document.getElementById('email').value,

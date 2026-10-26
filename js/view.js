@@ -7,6 +7,10 @@ export const openModal = () => {
 export const closeModal = () => {
     document.querySelector('.modal-header > h2').innerHTML = "Novo Cliente"
     document.getElementById('modal').classList.remove('active')
+    const inputEmail = document.getElementById('email')
+    if (inputEmail){
+        inputEmail.setCustomValidity('')
+    }
     clearFields()
 }
 
