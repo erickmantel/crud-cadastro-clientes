@@ -11,18 +11,25 @@ document.getElementById('cancelar').addEventListener('click', closeModal);
 document.getElementById('salvar').addEventListener('click', saveClient);
 document.querySelector('#tableClient>tbody').addEventListener('click', editDelete);
 
+//mecanismo debounce recursivo
+const debounce = (fn, delay = 500) => {
+    let timeoutId;
+    return (...args) => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+            fn(...args);
+        }, delay)
+    }
+}
 
-let tempE;
 
-document.getElementById('email').addEventListener('input', () => {
-    const inputEmail = document.getElementById('email');
 
-    inputEmail.setCustomValidity('');
 
-    clearTimeout(tempE);
-    
-    tempE = setTimeout(() =>{
-        validateEmail();
-    },500);
+document.getElementById('email').addEventListener('input', debounce(() => {
+    document.getElementById('email')
+}, ));
+
+document.getElementById('email').addEventListener('blur', () => {
+    clearTimeout(tempE)
+    validateEmail();
 })
-

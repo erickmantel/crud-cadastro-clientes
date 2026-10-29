@@ -11,7 +11,7 @@ export const validateEmail = () => {
         return true;
     } else {
         let inputEmail = document.getElementById('email');
-        inputEmail.setCustomValidity('Formato de email errado.');
+        inputEmail.setCustomValidity('Email invalido');
         inputEmail.reportValidity();
         return false;
     }
