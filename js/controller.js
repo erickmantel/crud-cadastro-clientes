@@ -11,13 +11,13 @@ export const validateEmail = () => {
         return true;
     } else {
         let inputEmail = document.getElementById('email');
-        inputEmail.setCustomValidity('Email invalido');
-        inputEmail.reportValidity();
-        return false;
+        inputEmail.setCustomValidity('Por favor, insira um endereço de e-mail válido (ex: nome@dominio.com).');
+        return inputEmail.reportValidity();
     }
 };
 
 export const validateName = () => {
+    const inputNome = document.getElementById('nome');
     
 };
 

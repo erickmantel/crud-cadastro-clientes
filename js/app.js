@@ -11,9 +11,9 @@ document.getElementById('cancelar').addEventListener('click', closeModal);
 document.getElementById('salvar').addEventListener('click', saveClient);
 document.querySelector('#tableClient>tbody').addEventListener('click', editDelete);
 
-//mecanismo debounce recursivo
-const debounce = (fn, delay = 500) => {
-    let timeoutId;
+let timeoutId;
+//voltar aqui pra revisar os detalhes do funcionamento 
+const debounce = (fn, delay = 650) => {
     return (...args) => {
         clearTimeout(timeoutId);
         timeoutId = setTimeout(() => {
@@ -22,14 +22,10 @@ const debounce = (fn, delay = 500) => {
     }
 }
 
-
-
-
 document.getElementById('email').addEventListener('input', debounce(() => {
-    document.getElementById('email')
+    validateEmail()
 }, ));
 
 document.getElementById('email').addEventListener('blur', () => {
-    clearTimeout(tempE)
-    validateEmail();
+    clearTimeout(timeoutId);
 })
