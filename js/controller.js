@@ -4,7 +4,7 @@ import { openModal, closeModal, updateTable, fillFields, editNameModal } from '.
 export const validateEmail = () => {
     const inputEmail = document.getElementById('email');
     const moldeEmail = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-    const emailValor = inputEmail.value;
+    const emailValor = inputEmail.value.trim();
 
     if (moldeEmail.test(emailValor)) {
         inputEmail.setCustomValidity('');
@@ -18,15 +18,25 @@ export const validateEmail = () => {
 
 export const validateName = () => {
     const inputNome = document.getElementById('nome');
+    const nomeValor = inputNome.value.trim()
+    const moldeNome = /^[A-Za-zÀ-ÿ\s]{3, 120}$}/;
+
+    if(nomeValor !== ''){  //se o input estiver vazio retorne verdadeiro
+        inputNome.setCustomValidity('');
+        return true;
+    }else{
+        const moldeNome = /s/;
+    }
+    
     
 };
 
 export const validatePhone = () => {
-
+    return true;
 };
 
 export const validateCity = () => {
-
+    return true;
 };
 
 const isValidForm = () => {

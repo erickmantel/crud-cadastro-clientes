@@ -12,7 +12,7 @@ document.getElementById('salvar').addEventListener('click', saveClient);
 document.querySelector('#tableClient>tbody').addEventListener('click', editDelete);
 
 let timeoutId;
-//voltar aqui pra revisar os detalhes do funcionamento 
+//analisar estrutura do debounce -->
 const debounce = (fn, delay = 650) => {
     return (...args) => {
         clearTimeout(timeoutId);
@@ -28,4 +28,4 @@ document.getElementById('email').addEventListener('input', debounce(() => {
 
 document.getElementById('email').addEventListener('blur', () => {
     clearTimeout(timeoutId);
-})
+});
