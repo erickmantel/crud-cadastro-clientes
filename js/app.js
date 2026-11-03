@@ -1,7 +1,7 @@
 import {createClient, readClient, updateClient, deleteClient} from './model.js';
 import {openModal, closeModal, updateTable} from './view.js';
 import {editDelete, saveClient} from './controller.js';
-import {validateEmail, validateName, validatePhone, validateCity} from './controller.js';
+import {validateEmail, validateName, validatePhone, validateCity} from './service.js';
 
 updateTable();
 
