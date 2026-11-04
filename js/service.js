@@ -1,21 +1,21 @@
-//import {} os elementos dom de input.value
+//preciso importar acesso ao dom pra conectar os valores dos inputs na camada de serviço 
 
-export const validateEmail = () => {
-    const inputEmail = document.getElementById('email');
+export const validateEmail = (email) => {
+    //const inputEmail = document.getElementById('email'); isso aqui já está no parametro do validateEmail
     const moldeEmail = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
     const emailValor = inputEmail.value.trim();
 
-    if (moldeEmail.test(emailValor)) {
-        inputEmail.setCustomValidity('');
+    /*if (moldeEmail.test(emailValor)) {
+        inputEmail.setCustomValidity('');  
         return true;
     } else {
         let inputEmail = document.getElementById('email');
         inputEmail.setCustomValidity('Por favor, insira um endereço de e-mail válido (ex: nome@dominio.com).');
         return inputEmail.reportValidity();
-    }
+    }*/
 };
 
-export const validateName = () => {
+export const validateName = (nome) => {
     const inputNome = document.getElementById('nome');
     const nomeValor = inputNome.value.trim()
     const moldeNome = /^[A-Za-zÀ-ÿ\s]{3, 120}$}/;
@@ -30,11 +30,11 @@ export const validateName = () => {
     
 };
 
-export const validatePhone = () => {
+export const validatePhone = (celular) => {
     return true;
 };
 
-export const validateCity = () => {
+export const validateCity = (cidade) => {
     return true;
 };
 
