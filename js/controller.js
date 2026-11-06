@@ -34,20 +34,14 @@ export const saveClient = () => {
         cidade: document.getElementById('cidade').value
     }
     
-    if (isValidForm()) {
-        const client = {
-            nome: document.getElementById('nome').value,
-            email: document.getElementById('email').value,
-            celular: document.getElementById('celular').value,
-            cidade: document.getElementById('cidade').value
-        };
+    if (isValidForm(clientData)) {
         const index = document.getElementById('nome').dataset.index;
         if (index === 'new') {
-            createClient(client);
+            createClient(clientData);
             updateTable();
             closeModal();
         } else {
-            updateClient(index, client);
+            updateClient(index, clientData);
             updateTable();
             closeModal();
         }
