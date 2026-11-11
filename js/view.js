@@ -67,3 +67,5 @@ export const getClientFormData = () => {
         cidade: document.getElementById('cidade').value
     }
 };
+
+//setCustomValidity(); fica nessa camada
