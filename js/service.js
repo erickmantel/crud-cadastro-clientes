@@ -1,8 +1,8 @@
 export const validateEmail = (email) => {
     const emailValor = email.trim();
-    if (emailValor.length === 0) return false; //Pop-up informando pra preencher o campo
+    if (emailValor.length === 0) return false; 
     const moldeEmail = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-    return moldeEmail.test(emailValor);  //regex.test(valor)
+    return moldeEmail.test(emailValor);  
 };
 
 export const validateName = (nome) => {
@@ -26,3 +26,10 @@ export const isValidForm = (client) => {
            validatePhone(client.celular) &&
            validateCity(client.cidade);
 };
+
+responseService{
+    email:
+    nome:
+    celular:
+    cidade:
+}

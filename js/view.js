@@ -64,8 +64,11 @@ export const getClientFormData = () => {
         nome: document.getElementById('nome').value,
         email: document.getElementById('email').value,
         celular: document.getElementById('celular').value,
-        cidade: document.getElementById('cidade').value
+        cidade: document.getElementById('cidade').value,
+        index: document.getElementById('nome').dataset.index
     }
 };
 
-//setCustomValidity(); fica nessa camada
+const renderValidation = (fieldId, isValid) => {
+    
+}

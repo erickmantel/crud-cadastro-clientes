@@ -29,13 +29,12 @@ export const editDelete = (event) => {
 export const saveClient = () => {
     const clientData = getClientFormData();  
     if (isValidForm(clientData)) {
-        const index = document.getElementById('nome').dataset.index;//ERRO, FUNÇÃO DA CAMADA VIEW 
-        if (index === 'new') {
+        if (clientData.index === 'new') {
             createClient(clientData);
             updateTable();
             closeModal();
         } else {
-            updateClient(index, clientData);
+            updateClient(clientData.index, clientData);
             updateTable();
             closeModal();
         }
